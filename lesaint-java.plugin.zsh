@@ -11,8 +11,13 @@ function jdk {
     if [ -n "${JAVA_HOME+x}" ]; then
       remove_from_path $JAVA_HOME
     fi
-    
-    export JAVA_HOME='/opt/java/$1'
+  
+    local newJavaHome="/opt/java/$1" 
+    if [ ! -d "$newJavaHome" ]; then
+      echo "$newJavaHome does not exist"
+      return
+    fi
+    export JAVA_HOME="$newJavaHome"
     export PATH=$JAVA_HOME/bin:$PATH
 
     echo "Java Environment Updated.\nJAVA_HOME: $JAVA_HOME"
