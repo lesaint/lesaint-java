@@ -20,8 +20,6 @@ function jdk {
     export JAVA_HOME="$newJavaHome"
     export PATH=$JAVA_HOME/bin:$PATH
 
-    echo "Java Environment Updated.\nJAVA_HOME: $JAVA_HOME"
-    echo `jv`
   else
     echo "JAVA_HOME: $JAVA_HOME"
     echo `jv`
