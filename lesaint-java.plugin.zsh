@@ -1,5 +1,5 @@
 function java_versions {
-	reply=($(cd /opt/java & find * -max-depth=0 -type l))
+	reply=($(cd /opt/java && find * -maxdepth 0 -type l))
 }
 
 function remove_from_path {
